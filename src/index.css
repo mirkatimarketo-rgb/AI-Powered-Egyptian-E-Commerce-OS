@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 35% 4%;
+    --foreground: 220 20% 94%;
+    --card: 220 30% 6%;
+    --card-foreground: 220 20% 94%;
+    --popover: 220 30% 6%;
+    --popover-foreground: 220 20% 94%;
+    --primary: 187 80% 52%;
+    --primary-foreground: 220 35% 4%;
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 220 20% 94%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 15% 55%;
+    --accent: 187 80% 52%;
+    --accent-foreground: 220 35% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 25% 16%;
+    --input: 220 25% 16%;
+    --ring: 187 80% 52%;
+    --radius: 0.5rem;
+    --sidebar-background: 220 30% 6%;
+    --sidebar-foreground: 220 20% 94%;
+    --sidebar-primary: 187 80% 52%;
+    --sidebar-primary-foreground: 220 35% 4%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-accent-foreground: 220 20% 94%;
+    --sidebar-border: 220 25% 16%;
+    --sidebar-ring: 187 80% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#050A14] text-[#E8EDF5] antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-cyan-glow {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  }
+  .card-glow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .card-glow-hover {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+  }
+  .border-glow {
+    border: 1px solid rgba(34, 211, 238, 0.4);
+  }
+  .bg-surface {
+    background-color: #0A1120;
+  }
+  .bg-elevated {
+    background-color: #0F1829;
+  }
+  .text-muted-blue {
+    color: #8B95A8;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 12px 4px rgba(34, 211, 238, 0.3);
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.live-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #22D3EE;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2744;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2A3764;
+}
